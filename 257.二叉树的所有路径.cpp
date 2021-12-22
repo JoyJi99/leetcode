@@ -30,8 +30,8 @@ public:
         }
         else{
             path += "->";
-            construct_paths(root->left, path, paths);
-            construct_paths(root->right, path, paths);
+            construct_paths(root->left, path, paths);//一个节点的左
+            construct_paths(root->right, path, paths);//一个节点的右
         }
     }
     vector<string> binaryTreePaths(TreeNode* root) {
