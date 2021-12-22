@@ -32,7 +32,7 @@ public:
             t->right = root->left;
             root->left = NULL;
         }
-        flatten(root->right);
+        flatten(root->right);//
     }
 };
 // @lc code=end
