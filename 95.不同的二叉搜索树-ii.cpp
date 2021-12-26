@@ -31,7 +31,7 @@ private:
             vector<TreeNode*> right = generateTrees(i+1, end);
             for(int j = 0; j < left.size(); j++){              
                for(int m = 0; m < right.size(); m++){
-                   TreeNode* root = new TreeNode(i);//放外面前面push的树会被后面的覆盖，产生相同解 
+                   TreeNode* root = new TreeNode(i);//放外面前面push的树会被后面的覆盖，且产生相同解 
                    root->left = left[j];
                    root->right = right[m];    
                    res.push_back(root);              
