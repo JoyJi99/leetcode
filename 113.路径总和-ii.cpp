@@ -27,6 +27,7 @@ public:
         }
         pathSum(root->left, targetSum, res, temp);
         pathSum(root->right, targetSum, res, temp);
+        //此时已走完一条路径
         temp.pop_back();//回溯 
     }
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
