@@ -9,24 +9,24 @@ class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         vector<int> res;
-        int hei = matrix.size() - 1;
-        int wid = matrix[0].size() - 1;
-        int col = 0;
-        int row = 0;
+        int hei = matrix.size() - 1;//down
+        int wid = matrix[0].size() - 1;//right
+        int col = 0;//left
+        int row = 0;//up
         while(col <= wid && row <= hei){
-            for(int i = col; i <= wid; i++){
+            for(int i = col; i <= wid; i++){//up
                 res.push_back(matrix[row][i]);
             }
             row++; 
-            for(int i = row; i <= hei; i++){
+            for(int i = row; i <= hei; i++){//right
                 res.push_back(matrix[i][wid]);
             }
             wid--;
-            for(int i = wid; i >= col && row <= hei; i--){
+            for(int i = wid; i >= col && row <= hei; i--){//down
                 res.push_back(matrix[hei][i]);
             }
             hei--;
-            for(int i = hei; i >= row && col <= wid; i--){
+            for(int i = hei; i >= row && col <= wid; i--){//left
                 res.push_back(matrix[i][col]);
             }
             col++; 
