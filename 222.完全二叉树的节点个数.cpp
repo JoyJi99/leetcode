@@ -18,6 +18,15 @@
  */
 class Solution {
 public:
+    int countNodes(TreeNode* root) {
+        if (!root) return 0;
+        int res = 1 + countNodes(root->left) + countNodes(root->right);
+        return res;
+    }
+};
+/*
+class Solution {
+public:
     int res = 0;
     void helper(TreeNode* root){
         if(!root) return;
@@ -30,5 +39,6 @@ public:
         return res;
     }
 };
+*/
 // @lc code=end
 
