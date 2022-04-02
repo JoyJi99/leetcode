@@ -30,8 +30,7 @@ public:
             p1 = p1->next;
             p2 = p2->next;
         }
-        if (n != 1) p1->next = p1->next->next;
-        else p1->next = nullptr;
+        p1->next = p1->next->next;
         return dummy->next;
     }
 };
