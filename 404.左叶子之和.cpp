@@ -25,5 +25,28 @@ public:
         return sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right) + temp;
     }
 };
+
+/*
+class Solution {
+public:
+    int sumOfLeftLeaves(TreeNode* root) {
+        //迭代法 —— 前中后序都可，这里用前序
+        int res = 0;
+        if (!root) return 0;
+        stack<TreeNode*> s;
+        while (!s.empty() || root) {
+            while (root) {
+                if (root->left && !root->left->left && !root->left->right) res += root->left->val;
+                s.push(root);
+                root = root->left;
+            }
+            root = s.top();
+            s.pop();
+            root = root->right;
+        }
+        return res; 
+    }
+};
+*/
 // @lc code=end
 
