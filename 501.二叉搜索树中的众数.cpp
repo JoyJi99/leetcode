@@ -29,14 +29,14 @@ private:
             if (pre->val == root->val) temp++;              
             else temp = 1;
         }
+        pre = root; //更新pre
         if (count <= temp) {
             if (temp > count) {
                 res.clear();
                 count = temp;
             } 
             res.push_back(root->val); 
-        }    
-        pre = root;
+        } 
         traversal(root->right);
     }    
 public:
@@ -45,5 +45,39 @@ public:
         return res;
     }
 };
+/* iteration
+class Solution {
+public:
+    vector<int> findMode(TreeNode* root) {
+        vector<int> res;
+        TreeNode * pre = nullptr;
+        int count = 1;
+        int temp = 1;
+        stack<TreeNode *> s;
+        while (!s.empty() || root) {
+            while (root) {
+                s.push(root);
+                root = root->left;
+            }
+            root = s.top();
+            s.pop();
+            if (pre) {
+                if (pre->val == root->val) temp++;              
+                else temp = 1;
+            }
+            pre = root; //更新pre
+            if (count <= temp) {
+                if (temp > count) {
+                    res.clear();
+                    count = temp;
+                } 
+                res.push_back(root->val); 
+            }  
+            root = root->right;
+        }
+        return res;
+    }
+};
+*/
 // @lc code=end
 
